@@ -28,16 +28,14 @@ public class HelloController {
     }
 	
 	@GetMapping("/byid")
-	@ResponseBody
-    public String byId(@RequestParam int id) {
-		
-        return "ID : " +id;
+    public Artist byId(@RequestParam int id) {
+		return artistRep.findById(id);
     }
 	
 	@GetMapping("/byname")
     public Iterable<Artist> byName(@RequestParam String name) {
-		System.out.println("******* NMAE: " + name);
-        return artistRep.filterByName(name);
+		System.out.println("Name: " + name);
+        return artistRep.findByNameContains(name);
     }
 	  
 	  
