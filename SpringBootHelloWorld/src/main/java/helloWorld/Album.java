@@ -20,6 +20,7 @@ public class Album {
 	@ManyToOne
 	@JoinColumn(name = "Artistid", referencedColumnName = "Artistid")
 	private Artist artist;
+	private int counter=0;
 
 	public int getAlbumId() {
 		return albumId;
